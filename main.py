@@ -64,4 +64,29 @@ def remover_tarefa(tarefas):
     except (IndexError, ValueError):
         print("Opção inválida.")
 
+def main():
+    tarefas = carregar_tarefas()
+
+    while True:
+        mostrar_menu()
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            adicionar_tarefa(tarefas)
+        elif opcao == "2":
+            listar_tarefas(tarefas)
+        elif opcao == "3":
+            concluir_tarefa(tarefas)
+        elif opcao == "4":
+            remover_tarefa(tarefas)
+        elif opcao == "0":
+            print("Saindo do sistema.")
+            break
+        else:
+            print("Opção inválida.")
+
+
+if __name__ == "__main__":
+    main()
+
 
