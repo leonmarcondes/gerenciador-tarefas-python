@@ -54,3 +54,14 @@ def concluir_tarefa(tarefas):
     except (IndexError, ValueError):
         print("Opção inválida.")
 
+def remover_tarefa(tarefas):
+    listar_tarefas(tarefas)
+    try:
+        indice = int(input("Digite o número da tarefa a remover: ")) - 1
+        tarefas.pop(indice)
+        salvar_tarefas(tarefas)
+        print("Tarefa removida com sucesso.")
+    except (IndexError, ValueError):
+        print("Opção inválida.")
+
+
