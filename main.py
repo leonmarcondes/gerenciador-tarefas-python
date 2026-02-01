@@ -80,8 +80,11 @@ def main():
         elif opcao == "4":
             remover_tarefa(tarefas)
         elif opcao == "0":
+            confirmar = input("Deseja realmente sair? (s/n): ").lower()
+            if confirmar == "s":
             print("Saindo do sistema.")
             break
+
         else:
             print("Opção inválida.")
 
