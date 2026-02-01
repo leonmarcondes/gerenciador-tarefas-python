@@ -43,3 +43,14 @@ def listar_tarefas(tarefas):
         status = "✔" if tarefa["concluida"] else "✖"
         print(f"{indice}. [{status}] {tarefa['descricao']}")
 
+
+def concluir_tarefa(tarefas):
+    listar_tarefas(tarefas)
+    try:
+        indice = int(input("Digite o número da tarefa concluída: ")) - 1
+        tarefas[indice]["concluida"] = True
+        salvar_tarefas(tarefas)
+        print("Tarefa marcada como concluída.")
+    except (IndexError, ValueError):
+        print("Opção inválida.")
+
