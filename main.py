@@ -33,3 +33,13 @@ def adicionar_tarefa(tarefas):
     tarefas.append(tarefa)
     salvar_tarefas(tarefas)
     print("Tarefa adicionada com sucesso.")
+
+def listar_tarefas(tarefas):
+    if not tarefas:
+        print("Nenhuma tarefa cadastrada.")
+        return
+
+    for indice, tarefa in enumerate(tarefas, start=1):
+        status = "✔" if tarefa["concluida"] else "✖"
+        print(f"{indice}. [{status}] {tarefa['descricao']}")
+
