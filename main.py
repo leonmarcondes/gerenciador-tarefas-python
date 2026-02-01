@@ -23,3 +23,13 @@ def mostrar_menu():
     print("3 - Marcar tarefa como concluída")
     print("4 - Remover tarefa")
     print("0 - Sair")
+
+def adicionar_tarefa(tarefas):
+    descricao = input("Digite a descrição da tarefa: ")
+    tarefa = {
+        "descricao": descricao,
+        "concluida": False
+    }
+    tarefas.append(tarefa)
+    salvar_tarefas(tarefas)
+    print("Tarefa adicionada com sucesso.")
